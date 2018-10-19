@@ -50,16 +50,16 @@
             "googleApiKey": "[parameters('googleApiKey')]",
             "gcmEndpoint": "[parameters('gcmEndpoint')]"
           }
-        },
-        "ApnsCredential": {
-          "properties": {
-            "appId": "[parameters('apnsTeamId')]",
-            "appName": "[parameters('apnsBundleId')]",
-            "keyId": "[parameters('apnsKeyId')]",
-            "token": "[parameters('apnsToken')]",
-            "endpoint": "[parameters('apnsEndpoint')]"
-          }
         }
+        //"ApnsCredential": {
+        //  "properties": {
+        //    "appId": "[parameters('apnsTeamId')]",
+        //    "appName": "[parameters('apnsBundleId')]",
+        //    "keyId": "[parameters('apnsKeyId')]",
+        //    "token": "[parameters('apnsToken')]",
+        //    "endpoint": "[parameters('apnsEndpoint')]"
+        //  }
+        //}
       }
     }
   ],
