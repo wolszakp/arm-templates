@@ -39,7 +39,7 @@
     {
       "apiVersion": "2017-04-01",
       "type": "Microsoft.NotificationHubs/namespaces/notificationHubs",
-      "name": "[concat(parameters('notificationHub_namespace'),'/', parameters('notificationHub_name'))]",
+      "name": "[parameters('notificationHub_name')]",
       "location": "[variables('location')]",
       "properties": {
         "GcmCredential": {
