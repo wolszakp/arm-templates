@@ -18,23 +18,23 @@
     "gcmEndpoint": {
       "type": "string",
       "defaultValue": "https://android.googleapis.com/gcm/send"
+    },
+    "apnsKeyId": {
+      "type": "string"
+    },
+    "apnsBundleId": {
+      "type": "string"
+    },
+    "apnsTeamId": {
+      "type": "string"
+    },
+    "apnsToken": {
+      "type": "string"
+    },
+    "apnsEndpoint": {
+      "type": "string",
+      "defaultValue": "gateway.push.apple.com"
     }
-    //"apnsKeyId": {
-    //  "type": "string"
-    //},
-    //"apnsBundleId": {
-    //  "type": "string"
-    //},
-    //"apnsTeamId": {
-    //  "type": "string"
-    //},
-    //"apnsToken": {
-    //  "type": "string"
-    //},
-    //"apnsEndpoint": {
-    //  "type": "string",
-    //  "defaultValue": "gateway.push.apple.com"
-    //}
   },
   "variables": {
   },
@@ -50,16 +50,16 @@
             "googleApiKey": "[parameters('googleApiKey')]",
             "gcmEndpoint": "[parameters('gcmEndpoint')]"
           }
+        },
+        "ApnsCredential": {
+          "properties": {
+            "appId": "[parameters('apnsTeamId')]",
+            "appName": "[parameters('apnsBundleId')]",
+            "keyId": "[parameters('apnsKeyId')]",
+            "token": "[parameters('apnsToken')]",
+            "endpoint": "[parameters('apnsEndpoint')]"
+          }
         }
-        //"ApnsCredential": {
-        //  "properties": {
-        //    "keyId": "[parameters('apnsKeyId')]",
-        //    "appName": "[parameters('apnsBundleId')]",
-        //    "appId": "[parameters('apnsTeamId')]",
-        //    "token": "[parameters('apnsToken')]",
-        //    "endpoint": "[parameters('apnsEndpoint')]"
-        //  }
-        //}
       }
     }
   ],
