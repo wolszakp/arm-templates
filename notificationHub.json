@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "notificationHub_namespace": {
+      "type": "string"
+    },
+    "notificationHub_name": {
+      "type": "string"
+    },
+    "googleApiKey": {
+      "type": "string"
+    },
+    "gcmEndpoint": {
+      "type": "string",
+      "defaultValue": "https://android.googleapis.com/gcm/send"
+    },
+    "apnsKeyId": {
+      "type": "string"
+    },
+    "apnsBundleId": {
+      "type": "string"
+    },
+    "apnsTeamId": {
+      "type": "string"
+    },
+    "apnsToken": {
+      "type": "string"
+    },
+    "apnsEndpoint": {
+      "type": "string",
+      "defaultValue": "gateway.push.apple.com"
+    }
+  },
+  "variables": {
+    "location": "[resourceGroup().location]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2017-04-01",
+      "type": "Microsoft.NotificationHubs/namespaces/notificationHubs",
+      "name": "[concat(parameters('notificationHub_namespace'),'/', parameters('notificationHub_name'))]",
+      "location": "[variables('location')]",
+      "properties": {
+        "GcmCredential": {
+          "properties": {
+            "googleApiKey": "[parameters('googleApiKey')]",
+            "gcmEndpoint": "[parameters('gcmEndpoint')]"
+          }
+        },
+        "ApnsCredential": {
+          "properties": {
+            "keyId": "[parameters('apnsKeyId')]",
+            "bundleId": "[parameters('apnsBundleId')]",
+            "teamId": "[parameters('apnsTeamId')]",
+            "token": "[parameters('apnsToken')]",
+            "endpoint": "[parameters('apnsEndpoint')]"
+          }
+        }
+      }
+    }
+  ],
+  "outputs": {
+  }
+}
